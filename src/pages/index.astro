@@ -1,17 +1,206 @@
 ---
+import '../styles/global.css';
 
+const galleryImages = [
+  "20220807_203116.jpg","20220810_192909.jpg","20220915_183754.jpg","20221008_155604.jpg",
+  "20240315_193737.jpg","20240322_220319.jpg","20240327_175542.jpg","20240411_181912.jpg",
+  "20240413_195744.jpg","20240417_110845.jpg","20240419_163421.jpg","20240422_190228.jpg",
+  "20240424_181640.jpg","20240429_180848.jpg","20240523_185843.jpg","20240718_115915.jpg",
+  "20240723_134325.jpg","20240914_155952.jpg","20240925_115634.jpg","20241011_194612.jpg",
+  "20241015_134710.jpg","20241020_152524.jpg","20241027_142746.jpg","20241109_102256~2.jpg",
+  "20241120_171616.jpg","20241122_112209.jpg","20241211_235224.jpg","20241213_152258.jpg",
+  "20250107_163503.jpg","20250122_143706.jpg","20250330_081559.jpg","20250427_170330.jpg",
+  "20250515_162856.jpg","20250610_172352.jpg","20250710_172513.jpg","20250717_181221.jpg",
+  "FB_IMG_1478143304718.jpg","FB_IMG_1478143653504.jpg","FB_IMG_1710776329649.jpg",
+  "FB_IMG_1710776342098.jpg","FB_IMG_1710776358379.jpg","FB_IMG_1710776373658.jpg",
+  "FB_IMG_1710776387529.jpg","FB_IMG_1710776402092.jpg","FB_IMG_1710776420631.jpg",
+  "FB_IMG_1710776439234.jpg","FB_IMG_1710776453189.jpg","FB_IMG_1710776495530.jpg",
+  "FB_IMG_1712089780936.jpg","FB_IMG_1712089793642.jpg","FB_IMG_1712089801920.jpg",
+  "FB_IMG_1712089808257.jpg","FB_IMG_1712089821164.jpg","FB_IMG_1712089829671.jpg",
+  "FB_IMG_1712089846544.jpg","FB_IMG_1712089860401.jpg","FB_IMG_1712089864966.jpg",
+  "FB_IMG_1712089883256.jpg","FB_IMG_1712089888655.jpg","FB_IMG_1712089894555.jpg",
+  "FB_IMG_1712089900406.jpg","FB_IMG_1712089905570.jpg","FB_IMG_1712089910503.jpg",
+  "FB_IMG_1712089915068.jpg","FB_IMG_1712089919732.jpg","FB_IMG_1712089925733.jpg",
+  "FB_IMG_1712089941784.jpg","FB_IMG_1712089947236.jpg","FB_IMG_1712089953572.jpg",
+  "FB_IMG_1712089959355.jpg","FB_IMG_1712089966293.jpg","FB_IMG_1712089977679.jpg",
+  "FB_IMG_1712089999717.jpg","FB_IMG_1712090006607.jpg","FB_IMG_1712090012191.jpg",
+  "FB_IMG_1712090019381.jpg","FB_IMG_1712090027607.jpg","FB_IMG_1712090076707.jpg",
+  "FB_IMG_1712090088609.jpg","FB_IMG_1712090100534.jpg","FB_IMG_1712090105664.jpg",
+  "FB_IMG_1712090112386.jpg","FB_IMG_1712090118022.jpg","FB_IMG_1712090127668.jpg",
+  "FB_IMG_1712090137516.jpg","FB_IMG_1712090143617.jpg","FB_IMG_1712090149953.jpg",
+  "FB_IMG_1712090156640.jpg","FB_IMG_1712090186280.jpg","FB_IMG_1712090192116.jpg",
+  "FB_IMG_1712090200777.jpg","FB_IMG_1712090212896.jpg","FB_IMG_1712090219399.jpg",
+  "FB_IMG_1712090246007.jpg","IMG_20190323_202458123~2.jpg","IMG_20211208_230132222~2.jpg",
+  "IMG_20220614_151628699.jpg","IMG_20220614_151752601.jpg","IMG_20220614_151805261.jpg",
+  "IMG_20220619_163151246.jpg","IMG_20230112_175930543_HDR.jpg","IMG_20230510_174418426_HDR.jpg",
+  "IMG_20230909_131723978_HDR.jpg","IMG_20240125_162808849_HDR.jpg","IMG_20240202_170106781_HDR.jpg",
+  "IMG_20240223_120416653_HDR.jpg","IMG_20240305_211325600.jpg","IMG_20260203_154540343~2.jpg",
+  "Nitro_5_GO_04092020_173241~2.jpg",
+  "00H0H_D8CzRAT1v7_600x450.jpg","086908ca-80bf-418a-91df-966f9f6f4708~1.jpg",
+  "7308bbb8-e102-47cd-a7c5-8976ba2b3db5~1.jpg","96380c92-80d6-4a34-aa78-68d48b64d834~1.jpg",
+  "b41367b3-e9ef-451b-b675-657a5a1169c8~1.jpg","d7604f14-ca69-48dd-af47-85967b76c835~1.jpg",
+  "eeccae6c-af74-43ff-bebd-2b685c8af4c8~1.jpg","fb7402d5-54cb-41c8-9ed2-00135497a9f0~1.jpg",
+  "received_1375368789583305~2.jpeg","USER_SCOPED_TEMP_DATA_orca-image-950478177.jpeg",
+];
+
+const services = [
+  { title: "Custom Iron Projects", desc: "Designed and built to your exact specifications. No project too unique." },
+  { title: "Welding & Metal Fabrication", desc: "Expert welding across all metals. Structural, decorative, and everything between." },
+  { title: "Gates & Fences", desc: "Driveway gates, yard fencing, and security barriers built to last decades." },
+  { title: "Handrails & Railings", desc: "Interior and exterior handrails crafted for safety and style." },
+  { title: "Metal Repair & Restoration", desc: "Bring old iron back to life. We restore, reinforce, and refinish." },
+];
+
+const testimonials = [
+  { text: "We are thrilled with the custom iron gate made by Keith. The quality and design exceeded our expectations. Highly recommended!", name: "John D.", location: "Oklahoma City" },
+  { text: "The team at Custom Iron Works of Oklahoma provided outstanding welding services for our business. Their professionalism and expertise are unmatched.", name: "Sarah K.", location: "Tulsa" },
+];
 ---
 
 <html lang="en">
-	<head>
-		<meta charset="utf-8" />
-		<link rel="icon" type="image/svg+xml" href="/favicon.svg" />
-		<link rel="icon" href="/favicon.ico" />
-		<meta name="viewport" content="width=device-width" />
-		<meta name="generator" content={Astro.generator} />
-		<title>Astro</title>
-	</head>
-	<body>
-		<h1>Astro</h1>
-	</body>
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Custom Iron Works of Oklahoma</title>
+    <meta name="description" content="30+ years of custom ironwork, welding, gates, fences, and metal fabrication serving Oklahoma City and surrounding areas." />
+    <meta property="og:title" content="Custom Iron Works of Oklahoma" />
+    <meta property="og:description" content="30+ years of custom ironwork. Gates, fences, handrails, welding. Oklahoma City and surrounding areas." />
+    <meta property="og:image" content="/welder_image.jpg" />
+    <link rel="icon" type="image/svg+xml" href="/favicon.svg" />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link href="https://fonts.googleapis.com/css2?family=Barlow+Condensed:wght@400;600;700;800&family=Barlow:wght@400;500&display=swap" rel="stylesheet" />
+  </head>
+  <body>
+
+    <!-- NAV -->
+    <nav>
+      <div class="nav-inner">
+        <div class="nav-brand">
+          <span class="brand-main">Custom Iron Works</span>
+          <span class="brand-sub">of Oklahoma</span>
+        </div>
+        <a href="tel:+14052274404" class="nav-cta">
+          <svg width="15" height="15" viewBox="0 0 24 24" fill="currentColor"><path d="M6.6 10.8c1.4 2.8 3.8 5.1 6.6 6.6l2.2-2.2c.3-.3.7-.4 1-.2 1.1.4 2.3.6 3.6.6.6 0 1 .4 1 1V20c0 .6-.4 1-1 1-9.4 0-17-7.6-17-17 0-.6.4-1 1-1h3.5c.6 0 1 .4 1 1 0 1.3.2 2.5.6 3.6.1.3 0 .7-.2 1L6.6 10.8z"/></svg>
+          (405) 227-4404
+        </a>
+      </div>
+    </nav>
+
+    <!-- HERO -->
+    <section class="hero">
+      <div class="hero-image-wrap">
+        <img src="/welder_image.jpg" alt="Custom Iron Works welding" class="hero-img" />
+        <div class="hero-overlay"></div>
+      </div>
+      <div class="hero-content">
+        <div class="hero-badge">30+ Years of Experience · Oklahoma City</div>
+        <h1 class="hero-title">
+          Custom Iron Works<br />
+          <span class="hero-title-sub">of Oklahoma</span>
+        </h1>
+        <div class="hero-actions">
+          <a href="tel:+14052274404" class="hero-btn hero-btn-primary">Call Now for a Free Consultation</a>
+          <a href="#contact" class="hero-btn hero-btn-secondary">Get In Touch ↓</a>
+        </div>
+      </div>
+    </section>
+
+    <!-- SERVICES -->
+    <section class="services" id="services">
+      <div class="services-inner">
+        <div class="section-label">What We Do</div>
+        <h2 class="section-title">Services Offered</h2>
+        <div class="services-grid">
+          {services.map((s) => (
+            <div class="service-card">
+              <div class="service-line"></div>
+              <h3 class="service-name">{s.title}</h3>
+              <p class="service-desc">{s.desc}</p>
+            </div>
+          ))}
+        </div>
+      </div>
+    </section>
+
+    <!-- CONTACT -->
+    <section class="contact" id="contact">
+      <div class="contact-inner">
+        <div class="section-label">Get In Touch</div>
+        <h2 class="section-title">Expect a prompt response</h2>
+
+        <div class="contact-grid">
+          <div class="contact-block contact-block-main">
+            <div class="contact-block-label">Call or Text</div>
+            <a href="tel:+14052274404" class="contact-phone">(405) 227-4404</a>
+            <p class="contact-note">Call or text anytime.</p>
+          </div>
+          <div class="contact-block">
+            <div class="contact-block-label">Email</div>
+            <a href="mailto:keithsummers11@gmail.com" class="contact-email">keithsummers11@gmail.com</a>
+          </div>
+          <div class="contact-block">
+            <div class="contact-block-label">Hours</div>
+            <p class="contact-hours">7 Days a Week</p>
+            <p class="contact-hours">8am – 8pm</p>
+          </div>
+          <div class="contact-block">
+            <div class="contact-block-label">Service Area</div>
+            <p class="contact-area">Oklahoma City and all surrounding areas</p>
+          </div>
+        </div>
+
+        <a href="tel:+14052274404" class="contact-btn">Call Now for a Free Consultation</a>
+      </div>
+    </section>
+
+    <!-- TESTIMONIALS -->
+    <section class="testimonials" id="testimonials">
+      <div class="testimonials-inner">
+        <div class="section-label">Happy Customers</div>
+        <h2 class="section-title">What People Say</h2>
+        <div class="testimonials-grid">
+          {testimonials.map((t) => (
+            <blockquote class="testimonial-card">
+              <p class="testimonial-text">"{t.text}"</p>
+              <footer class="testimonial-attr">
+                <span class="testimonial-name">{t.name}</span>
+                <span class="testimonial-location">{t.location}</span>
+              </footer>
+            </blockquote>
+          ))}
+        </div>
+      </div>
+    </section>
+
+    <!-- GALLERY CTA -->
+    <section class="gallery-cta">
+      <div class="gallery-cta-inner">
+        <div class="gallery-cta-number">100+</div>
+        <div class="gallery-cta-text">
+          <h2 class="gallery-cta-title">Browse Our Previous Work</h2>
+          <p class="gallery-cta-sub">Scroll down to see hundreds of completed projects including gates, fences, handrails, custom fabrication, and more.</p>
+        </div>
+        <div class="gallery-cta-arrow">↓</div>
+      </div>
+    </section>
+
+    <!-- GALLERY -->
+    <section class="gallery" id="gallery">
+      <div class="masonry-grid">
+        {galleryImages.map((img) => (
+          <div class="masonry-item">
+            <img src={`/gallery/${img}`} alt="Custom Iron Works project" loading="lazy" />
+          </div>
+        ))}
+      </div>
+    </section>
+
+    <!-- FOOTER -->
+    <footer class="footer">
+      <span>© 2026 Custom Iron Works of Oklahoma</span>
+      <a href="tel:+14052274404" class="footer-phone">(405) 227-4404</a>
+    </footer>
+
+  </body>
 </html>
