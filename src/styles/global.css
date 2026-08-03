@@ -522,8 +522,8 @@ nav {
    =================================== */
 
 @media (max-width: 768px) {
-  .hero { height: 55svh; max-height: 480px; }
-  .hero-content { padding: 0 20px 36px; }
+  .hero { height: auto; min-height: 55svh; max-height: none; overflow: visible; padding-bottom: 36px; }
+  .hero-content { padding: 0 20px 0; }
 
   .services-inner, .contact-inner, .testimonials-inner { padding: 48px 20px; }
 
