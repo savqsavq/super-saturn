@@ -218,6 +218,30 @@ nav {
   padding: 64px 40px;
 }
 
+.service-featured {
+  padding: 28px 32px;
+  margin-bottom: 20px;
+  border: 1px solid var(--amber);
+  background: var(--amber-dim);
+}
+
+.service-featured-name {
+  font-family: var(--font-display);
+  font-weight: 700;
+  font-size: 1.9rem;
+  letter-spacing: 0.04em;
+  text-transform: uppercase;
+  color: var(--white);
+  margin-bottom: 8px;
+}
+
+.service-featured-desc {
+  font-size: 1.05rem;
+  line-height: 1.6;
+  color: var(--grey-light);
+  max-width: 640px;
+}
+
 .services-grid {
   display: grid;
   grid-template-columns: repeat(auto-fit, minmax(180px, 1fr));
@@ -310,12 +334,13 @@ nav {
   display: block;
   font-family: var(--font-display);
   font-weight: 600;
-  font-size: 1.25rem;
+  font-size: clamp(1rem, 2vw, 1.25rem);
   color: var(--amber);
   text-decoration: none;
   margin-bottom: 6px;
   transition: color 0.15s;
-  word-break: break-all;
+  word-break: normal;
+  overflow-wrap: normal;
 }
 .contact-email:hover { color: var(--amber-bright); }
 
